@@ -9,5 +9,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 django.setup()
 
 # Now you can use Django functionality, such as models or the ORM
-from myapp.models import MyModel
-results = MyModel.objects.all()
+from polls.models import RandomText
+results = RandomText.objects.all()
