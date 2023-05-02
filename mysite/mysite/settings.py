@@ -27,8 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-DJANGO_SETTINGS_MODULE = 'mysite.settings'
-
 # Application definition
 
 INSTALLED_APPS = [
