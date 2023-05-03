@@ -10,3 +10,4 @@ def my_view(request):
     else:
         print ("NOT OK")
         # Return an 'invalid login' error message.
+p
