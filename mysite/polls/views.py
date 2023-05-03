@@ -1,25 +1,21 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
+from .models import Question
+from django.template import loader
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-# Create your views here.
+    latest_question_list = Question.objects.order_by("-pub_date")[:5]
+    context = {"latest_question_list": latest_question_list}
+    return render(request, "polls/index.html", context)
 
-def my_view(request):
-    if request.method == 'POST':
-        username = request.POST.get('ictasadmin')
-        password = request.POST.get('ZaK918273*?')
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            # Redirect to a success page.
-            return HttpResponse("Logged in")
-            # return render(request, 'success.html')
-        else:
-            return HttpResponse("Cant log in")
-            # Return an 'invalid login' error message.
-            # return render(request, 'login.html', {'error_message': 'Invalid login credentials'})
-    else:
-        return HttpResponse("Login page")
-        # return render(request, 'login.html')
+def detail(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, "polls/detail.html", {"question": question})
+
+def results(request, question_id):
+    response = "You're looking at the results of question %s."
+    return HttpResponse(response % question_id)
+
+def vote(request, question_id):
+    return HttpResponse("You're voting on question %s." % question_id)
