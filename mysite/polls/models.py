@@ -43,3 +43,9 @@ class R2Code(models.Model):
         managed = False
         db_table = 'r2_code'
         unique_together = ('r_1_code', 'r_2_code')
+
+    def _do_insert(self, manager, using, fields, update_pk, raw):
+        fields = [
+            f for f in fields if f.attname not in ['code_r2']
+        ]
+        return super()._do_insert(manager, using, fields, update_pk, raw)
