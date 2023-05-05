@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
-from .models import Question
+from .models import Question,R1Code,R2Code
 from django.template import loader
 
 def index(request):
@@ -19,3 +19,19 @@ def results(request, question_id):
 
 def vote(request, question_id):
     return HttpResponse("You're voting on question %s." % question_id)
+
+def r1_codes(request):
+    r1_code_list =  R1Code.objects.all().order_by('r_1_code')
+    context = {"R1_kod_listesi": r1_code_list}
+    return render(request, "polls/r1_codes.html", context)
+
+def r2_codes(request):
+    r2_code_list =  R2Code.objects.all().order_by('r_1_code','r_2_code')
+    context = {"R2_kod_listesi": r2_code_list}
+    return render(request, "polls/r2_codes.html", context) 
+
+def r1_codes_detail(request, r_1_code):
+    r1_code = get_object_or_404(R1Code, pk=r_1_code)
+    r2_code_list = R2Code.objects.filter(r_1_code=r_1_code).order_by('r_1_code','r_2_code')
+    context = {"R1_kod": r1_code, "R2_kod_listesi": r2_code_list}
+    return render(request, "polls/r1_codes_detail.html", context)

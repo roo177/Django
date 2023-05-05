@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>R2 Codes</title>
+  </head>
+  <body>
+    <h1>List of R2 Codes</h1>
+    <ul>
+      {% for r2_code in R2_kod_listesi %}
+        <li>
+          <strong>R1 Code:</strong> {{ r2_code.r_1_code }}<br>
+          <strong>R2 Code:</strong> {{ r2_code.r_2_code }}<br>
+          <strong>Kod Açıklaması:</strong> {{ r2_code.r_2_desc_tr }}
+        </li>
+      {% empty %}
+        <li>No R2 codes found.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
