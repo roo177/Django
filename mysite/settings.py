@@ -78,12 +78,17 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
 
     'default': {
-        'NAME': "test",
+ 
+        'HOST': "db.uzookynuowbitablyyld.supabase.co",
+        'NAME' : "postgres",
+        #'NAME': "test",
         'ENGINE': "django.db.backends.postgresql",
-        'HOST': "192.168.10.225",
+        #'HOST': "192.168.10.225",
         'PORT': "5432",
-        'USER': "ictasadmin",
-        'PASSWORD': "ZaK918273*?",
+        'USER': "postgres",
+        #'USER': "ictasadmin",
+        #'PASSWORD': "ZaK918273*?",
+        'PASSWORD' :"Er1439223-1"
 
     }
 }
