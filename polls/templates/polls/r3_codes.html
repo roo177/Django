@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>R3 KOD LİSTESİ</title>
+  </head>
+  <body>
+    <h1>R3 KOD LİSTESİ</h1>
+    <ul>
+      {% for r3_code in R3_kod_listesi %}
+        <li>
+          <strong>R1 Code:</strong> {{ r3_code.r_1_code }}<br>
+          <strong>R2 Code:</strong> {{ r3_code.r_2_code }}<br>
+          <strong>R3 Code:</strong> {{ r3_code.r_3_code }}<br>          
+          <strong>Kod Açıklaması TR:</strong> {{ r3_code.r_3_desc_tr }}
+          <strong>Kod Açıklaması EN:</strong> {{ r3_code.r_3_desc_en }}         
+        </li>
+      {% empty %}
+        <li>R3 Kod bulunamadı.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

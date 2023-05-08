@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
-from .models import Question,R1Code,R2Code
+from .models import Question,R1Code,R2Code,R3Code,R4Code
 from django.template import loader
 
 def index(request):
@@ -29,6 +29,16 @@ def r2_codes(request):
     r2_code_list =  R2Code.objects.all().order_by('r_1_code','r_2_code')
     context = {"R2_kod_listesi": r2_code_list}
     return render(request, "polls/r2_codes.html", context) 
+
+def r3_codes(request):
+    r3_code_list =  R3Code.objects.all().order_by('r_1_code','r_2_code','r_3_code')
+    context = {"R3_kod_listesi": r3_code_list}
+    return render(request, "polls/r3_codes.html", context) 
+
+def r4_codes(request):
+    r4_code_list =  R4Code.objects.all().order_by('r_1_code','r_2_code','r_3_code','r_4_code')
+    context = {"R4_kod_listesi": r4_code_list}
+    return render(request, "polls/r4_codes.html", context) 
 
 def r1_codes_detail(request, r_1_code):
     r1_code = get_object_or_404(R1Code, pk=r_1_code)
