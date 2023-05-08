@@ -11,4 +11,5 @@ urlpatterns = [
     path("r2_codes/", views.r2_codes, name="r2_codes"),
     path("r1_codes/", views.r1_codes, name="r1_codes"),
     path("r1_codes/<str:r_1_code>/", views.r1_codes_detail, name="r1_codes_detail"),
+    path("r2_codes/<str:r_1_code>/<str:r_2_code>/", views.r2_codes_detail, name="r2_codes_detail"),
 ]

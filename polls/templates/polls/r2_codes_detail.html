@@ -1,0 +1,15 @@
+<!-- This is a heading for the page -->
+<h1>R2 Code Details</h1>
+{% if R2_kod_listesi %}
+<!-- This is an unordered list with two items showing R1 code and description-->
+<ul>
+  <li><strong>R1 Kodu:</strong> {{ R2_kod.r_1_code }}</li>
+  <li><strong>R2 Kodu:</strong> {{ R2_kod.r_2_code }}</li>
+  <li><strong>Açıklama TR:</strong> {{ R2_kod.r_2_desc_tr }}</li>
+  <li><strong>Açıklama EN:</strong> {{ R2_kod.r_2_desc_en }}</li>
+</ul>
+
+<!-- If there are no R2 codes found, display the following message -->
+{% else %}
+  <p>No R2 codes found.</p>
+{% endif %}
