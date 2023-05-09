@@ -16,4 +16,5 @@ urlpatterns = [
     path("r2_codes/<str:r_1_code>/<str:r_2_code>/", views.r2_codes_detail, name="r2_codes_detail"),
     path("r3_codes/<str:r_1_code>/<str:r_2_code>/<str:r_3_code>/", views.r3_codes_detail, name="r3_codes_detail"),
     path("r4_codes/<str:r_1_code>/<str:r_2_code>/<str:r_3_code>/<str:r_4_code>/", views.r4_codes_detail, name="r4_codes_detail"),
+    path("<int:question_id>/vote/", views.vote, name="vote"),
 ]

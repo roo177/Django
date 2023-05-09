@@ -1,3 +1,7 @@
+from django.db import models
+from django.utils import timezone
+import datetime
+
 class C1Code(models.Model):
     c_l1 = models.CharField(db_column='c_l1', max_length=2)  # Field name made lowercase.
     code_l1 = models.CharField(db_column='code_l1', max_length=2, primary_key=True)
