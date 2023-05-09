@@ -1,17 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>R4 KOD LİSTESİ</title>
+  </head>
+  <body>
 <!-- This is a heading for the page -->
 <h1>R4 KOD DETAYI</h1>
 {% if R4_kod_listesi %}
 <!-- This is an unordered list with two items showing R1 code and description-->
 <ul>
-  <li><strong>R1 Kodu:</strong> {{ R4_kod.r_1_code }}</li>
-  <li><strong>R2 Kodu:</strong> {{ R4_kod.r_2_code }}</li>
-  <li><strong>R3 Kodu:</strong> {{ R4_kod.r_3_code }}</li>
-  <li><strong>R4 Kodu:</strong> {{ R4_kod.r_4_code }}</li>
-  <li><strong>Açıklama TR:</strong> {{ R4_kod.r_4_desc_tr }}</li>
-  <li><strong>Açıklama EN:</strong> {{ R4_kod.r_4_desc_en }}</li>
-</ul>
+  <li><strong>R1 Kod:</strong> {{ R4_kod.r_1_code }}</li>          
+  <li><strong>R2 Kod:</strong> {{ R4_kod.r_2_code }}</li>          
+  <li><strong>R3 Kod:</strong> {{ R4_kod.r_3_code }}</li>          
+  <li><strong>R4 Kod:</strong> {{ R4_kod.r_4_code }}</li>          
+  <li><strong>Açıklama TR:</strong> {{ R4_kod.r_4_desc_tr }}</li>          
+  <li><strong>Açıklama EN:</strong> {{ R4_kod.r_4_desc_en }}</li>          
+</ul><br>
 
 <!-- If there are no R2 codes found, display the following message -->
 {% else %}
-  <p>No R4 codes found.</p>
+  <p>R4 Kod bulunamadı.</p>
 {% endif %}
+  <h2 h2><a href="{% url 'polls:r4_codes' %}">{{ 'GERİ' }}</a></h2>
+  </body>
+</html>

@@ -5,12 +5,12 @@
   </head>
   <body>
     <h1>List of R1 Codes</h1>
-    <ul>
+    <ul>                          
       {% for r1_code in R1_kod_listesi %}
         <li>
-          <strong>R1 Code:</strong> {{ r1_code.r_1_code }}<br>
-          <strong>Kod Açıklaması:</strong> {{ r1_code.r_1_desc_tr }}
-        </li>
+          <strong>R1 Code:<a href="{% url 'polls:r1_codes_detail' r1_code.r_1_code %}">{{ r1_code.r_1_code }}</a><br>
+          <strong>Kod Açıklaması:</strong> {{ r1_code.r_1_desc_tr }}<br>
+        </li><br>
       {% empty %}
         <li>No R1 codes found.</li>
       {% endfor %}

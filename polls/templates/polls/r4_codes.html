@@ -8,13 +8,13 @@
     <ul>
       {% for r4_code in R4_kod_listesi %}
         <li>
-          <strong>R1 Code:</strong> {{ r4_code.r_1_code }}<br>
-          <strong>R2 Code:</strong> {{ r4_code.r_2_code }}<br>
-          <strong>R3 Code:</strong> {{ r4_code.r_3_code }}<br>    
-          <strong>R4 Code:</strong> {{ r4_code.r_4_code }}<br>  
-          <strong>Kod Açıklaması TR:</strong> {{ r4_code.r_4_desc_tr }}
-          <strong>Kod Açıklaması EN:</strong> {{ r4_code.r_4_desc_en }}         
-        </li>
+          <strong>R1 Kod:</strong> {{ r4_code.r_1_code }}<br>
+          <strong>R2 Kod:</strong> {{ r4_code.r_2_code }}<br>
+          <strong>R3 Kod:</strong> {{ r4_code.r_3_code }}<br>    
+          <strong>R4 Kod:</strong> <a href="{% url 'polls:r4_codes_detail' r4_code.r_1_code r4_code.r_2_code r4_code.r_3_code r4_code.r_4_code %}">{{ r4_code.r_4_code }}</a><br>  
+          <strong>Kod Açıklaması TR:</strong> {{ r4_code.r_4_desc_tr }}<br> 
+          <strong>Kod Açıklaması EN:</strong> {{ r4_code.r_4_desc_en }}<br>     
+        </li><br>
       {% empty %}
         <li>R4 Kod bulunamadı.</li>
       {% endfor %}

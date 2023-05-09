@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>R3 KOD LİSTESİ</title>
+  </head>
+  <body>
 <!-- This is a heading for the page -->
 <h1>R3 KOD DETAYI</h1>
 {% if R3_kod_listesi %}
@@ -12,5 +18,8 @@
 
 <!-- If there are no R2 codes found, display the following message -->
 {% else %}
-  <p>No R3 codes found.</p>
+  <p>R3 Kod bulunamadı.</p>
 {% endif %}
+  <h2><a href="{% url 'polls:r3_codes' %}">{{ 'GERİ' }}</a></h2>
+  </body>
+</html>

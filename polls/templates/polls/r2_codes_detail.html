@@ -1,10 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>R2 KOD LİSTESİ</title>
+  </head>
+  <body>
 <!-- This is a heading for the page -->
-<h1>R2 Code Details</h1>
+<h1>R2 KOD LİSTESİ</h1>
 {% if R2_kod_listesi %}
 <!-- This is an unordered list with two items showing R1 code and description-->
 <ul>
-  <li><strong>R1 Kodu:</strong> {{ R2_kod.r_1_code }}</li>
-  <li><strong>R2 Kodu:</strong> {{ R2_kod.r_2_code }}</li>
+  <li><strong>R1 Kod:</strong> {{ R2_kod.r_1_code }}</li>
+  <li><strong>R2 Kod:</strong> {{ R2_kod.r_2_code }}</li>
   <li><strong>Açıklama TR:</strong> {{ R2_kod.r_2_desc_tr }}</li>
   <li><strong>Açıklama EN:</strong> {{ R2_kod.r_2_desc_en }}</li>
 </ul>
@@ -13,3 +19,6 @@
 {% else %}
   <p>No R2 codes found.</p>
 {% endif %}
+  <h2><a href="{% url 'polls:r2_codes' %}">{{ 'GERİ' }}</a></h2>
+  </body>
+</html>

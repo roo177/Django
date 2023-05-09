@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>R2 Codes</title>
+    <title>R2 KOD LİSTESİ</title>
   </head>
   <body>
-    <h1>List of R2 Codes</h1>
+    <h1>R2 KOD LİSTESİ</h1>
     <ul>
       {% for r2_code in R2_kod_listesi %}
         <li>
-          <strong>R1 Code:</strong> {{ r2_code.r_1_code }}<br>
-          <strong>R2 Code:</strong> {{ r2_code.r_2_code }}<br>
-          <strong>Kod Açıklaması:</strong> {{ r2_code.r_2_desc_tr }}
-        </li>
+          <strong>R1 Kod:</strong> {{ r2_code.r_1_code }}<br>
+          <strong>R2 Kod:</strong><a href="{% url 'polls:r2_codes_detail' r2_code.r_1_code r2_code.r_2_code %}">{{ r2_code.r_2_code }}</a><br>
+          <strong>Kod Açıklaması TR:</strong> {{ r2_code.r_2_desc_tr }}<br>
+          <strong>Kod Açıklaması EN:</strong> {{ r2_code.r_2_desc_en }}<br>
+        </li><br>
       {% empty %}
-        <li>No R2 codes found.</li>
+        <li>R2 Kod bulunamadı.</li>
       {% endfor %}
     </ul>
   </body>

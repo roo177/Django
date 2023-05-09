@@ -42,8 +42,8 @@ def r4_codes(request):
 
 def r1_codes_detail(request, r_1_code):
     r1_code = get_object_or_404(R1Code, pk=r_1_code)
-    r2_code_list = R2Code.objects.filter(r_1_code=r_1_code).order_by('r_1_code','r_2_code')
-    context = {"R1_kod": r1_code, "R2_kod_listesi": r2_code_list}
+    r1_code_list = R1Code.objects.filter(r_1_code=r_1_code).order_by('r_1_code')
+    context = {"R1_kod": r1_code, "R1_kod_listesi": r1_code_list}
     return render(request, "polls/r1_codes_detail.html", context)
 
 def r2_codes_detail(request, r_1_code, r_2_code):
