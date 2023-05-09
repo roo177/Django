@@ -51,3 +51,15 @@ def r2_codes_detail(request, r_1_code, r_2_code):
     r2_code_list = R2Code.objects.filter(r_1_code=r_1_code ,r_2_code = r_2_code).order_by('r_1_code','r_2_code')
     context = {"R1_kod": r_1_code, "R2_kod" : r2_code, "R2_kod_listesi": r2_code_list}
     return render(request, "polls/r2_codes_detail.html", context)
+
+def r3_codes_detail(request, r_1_code, r_2_code, r_3_code):
+    r3_code = get_object_or_404(R3Code, r_1_code=r_1_code, r_2_code=r_2_code, r_3_code=r_3_code)
+    r3_code_list = R3Code.objects.filter(r_1_code=r_1_code ,r_2_code = r_2_code, r_3_code= r_3_code).order_by('r_1_code','r_2_code','r_3_code')
+    context = {"R1_kod": r_1_code, "R2_kod" : r_2_code, "R3_kod": r3_code, "R3_kod_listesi": r3_code_list}
+    return render(request, "polls/r3_codes_detail.html", context)
+
+def r4_codes_detail(request, r_1_code, r_2_code, r_3_code, r_4_code):
+    r4_code = get_object_or_404(R4Code, r_1_code=r_1_code, r_2_code=r_2_code, r_3_code=r_3_code, r_4_code=r_4_code)
+    r4_code_list = R4Code.objects.filter(r_1_code=r_1_code ,r_2_code = r_2_code, r_3_code= r_3_code, r_4_code= r_4_code).order_by('r_1_code','r_2_code','r_3_code', 'r_4_code')
+    context = {"R1_kod": r_1_code, "R2_kod" : r_2_code, "R3_kod": r_3_code, "R4_kod": r4_code, "R4_kod_listesi": r4_code_list}
+    return render(request, "polls/r4_codes_detail.html", context)
